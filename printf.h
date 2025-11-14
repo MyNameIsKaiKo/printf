@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putunbr.c                                       :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jleray <marvin@d42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 12:16:45 by jleray            #+#    #+#             */
-/*   Updated: 2025/11/14 12:16:45 by jleray           ###   ########.fr       */
+/*   Created: 2025/11/14 12:11:13 by jleray            #+#    #+#             */
+/*   Updated: 2025/11/14 12:11:13 by jleray           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#ifndef PRINTF_H
+# define PRINTF_H
 
-void	ft_putunbr(unsigned int nb)
-{
-	if (nb < 10)
-	{
-		ft_putchar_fd(nb + '0', 1);
-		return ;
-	}
-	else
-	{
-		ft_putunbr(nb / 10);
-		ft_putunbr(nb % 10);
-	}
-}
+# include <stdlib.h>
+# include "libft/libft.h"
+
+int	ft_putnbr_hex(unsigned int nb, char *base, int nbcar);
+
+#endif

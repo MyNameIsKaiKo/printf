@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "printf.h"
+
 int	ft_printf(const char *str, void *ptr)
 {
 	return (0);
