@@ -6,6 +6,11 @@ SOURCE =	ft_printf.c \
 			ft_putnbr_base.c \
 			ft_putpercent.c \
 			ft_putunbr.c \
+			ft_putnbr_fd.c \
+			ft_putchar_fd.c \
+			ft_putstr_fd.c \
+			ft_strlen.c \
+
 
 NAME =	libftprintf.a
 

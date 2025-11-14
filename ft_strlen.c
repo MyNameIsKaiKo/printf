@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putunbr.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jleray <marvin@d42.fr>                     +#+  +:+       +#+        */
+/*   By: jleray <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 12:16:45 by jleray            #+#    #+#             */
-/*   Updated: 2025/11/14 12:16:45 by jleray           ###   ########.fr       */
+/*   Created: 2025/10/13 15:23:26 by jleray            #+#    #+#             */
+/*   Updated: 2025/10/13 15:24:15 by jleray           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-void	ft_putunbr(unsigned int nb)
+size_t	ft_strlen(const char *s)
 {
-	if (nb < 10)
-	{
-		ft_putchar_fd(nb + '0', 1);
-		return ;
-	}
-	else
-	{
-		ft_putunbr(nb / 10);
-		ft_putunbr(nb % 10);
-	}
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

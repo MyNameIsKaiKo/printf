@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putunbr.c                                       :+:      :+:    :+:   */
+/*   count_car.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jleray <marvin@d42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 12:16:45 by jleray            #+#    #+#             */
-/*   Updated: 2025/11/14 12:16:45 by jleray           ###   ########.fr       */
+/*   Created: 2025/11/14 19:02:10 by jleray            #+#    #+#             */
+/*   Updated: 2025/11/14 19:02:10 by jleray           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
-
-void	ft_putunbr(unsigned int nb)
+int	count_car(int nb, int base)
 {
-	if (nb < 10)
+	int	i;
+
+	i = 0;
+	while (nb > 0)
 	{
-		ft_putchar_fd(nb + '0', 1);
-		return ;
+		nb = nb / base;
+		i++;
 	}
-	else
-	{
-		ft_putunbr(nb / 10);
-		ft_putunbr(nb % 10);
-	}
+	return (i);
 }

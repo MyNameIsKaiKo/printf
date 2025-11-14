@@ -14,8 +14,12 @@
 # define PRINTF_H
 
 # include <stdlib.h>
-# include "libft/libft.h"
+# include <unistd.h>
 
-int	ft_putnbr_hex(unsigned int nb, char *base, int nbcar);
-
+void	ft_putnbr_hex(unsigned int nb, char *base);
+size_t	ft_strlen(const char *s);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putunbr(unsigned int nb);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putchar_fd(char c, int fd);
 #endif

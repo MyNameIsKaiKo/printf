@@ -12,31 +12,16 @@
 
 #include "printf.h"
 
-int	nbcar_calc(int nb, char *base)
-{
-	int	i;
-
-	i = 0;
-	while (nb > 0)
-	{
-		nb = nb / (int)ft_strlen(base);
-		i++;
-	}
-	return (i);
-}
-
-int	ft_putnbr_hex(unsigned int nb, char *base, int nbcar)
+void	ft_putnbr_hex(unsigned int nb, char *base)
 {
 	if (nb < (unsigned int)ft_strlen(base))
 	{
 		ft_putchar_fd(base[nb], 1);
-		nbcar++;
-		return (nbcar);
+		return ;
 	}
 	else
 	{
-		ft_putnbr_hex(nb / (unsigned int)ft_strlen(base), base, nbcar);
-		ft_putnbr_hex(nb % (unsigned int)ft_strlen(base), base, nbcar);
+		ft_putnbr_hex(nb / (unsigned int)ft_strlen(base), base);
+		ft_putnbr_hex(nb % (unsigned int)ft_strlen(base), base);
 	}
-	return (nbcar_calc(nb, base));
 }
