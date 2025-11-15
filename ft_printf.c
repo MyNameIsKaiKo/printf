@@ -12,7 +12,10 @@
 
 #include "printf.h"
 
-int	ft_printf(const char *str, void *ptr)
+int	ft_printf(const char *str, ...)
 {
+	va_list	args;
+
+	va_start(args, str);
 	return (0);
 }

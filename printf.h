@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
 void	ft_putnbr_hex(unsigned int nb, char *base);
 size_t	ft_strlen(const char *s);
