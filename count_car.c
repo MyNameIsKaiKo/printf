@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	count_car(int nb, int base)
+#include "printf.h"
+
+int	count_car(size_t nb, int base)
 {
 	int	i;
 

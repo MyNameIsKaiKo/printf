@@ -12,16 +12,16 @@
 
 #include "printf.h"
 
-void	ft_putnbr_hex(unsigned int nb, char *base)
+void	ft_putnbr_hex(size_t nb, char *base)
 {
-	if (nb < (unsigned int)ft_strlen(base))
+	if (nb < ft_strlen(base))
 	{
 		ft_putchar_fd(base[nb], 1);
 		return ;
 	}
 	else
 	{
-		ft_putnbr_hex(nb / (unsigned int)ft_strlen(base), base);
-		ft_putnbr_hex(nb % (unsigned int)ft_strlen(base), base);
+		ft_putnbr_hex(nb / ft_strlen(base), base);
+		ft_putnbr_hex(nb % ft_strlen(base), base);
 	}
 }

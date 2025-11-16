@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jleray <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jleray <marvin@d42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 15:23:26 by jleray            #+#    #+#             */
-/*   Updated: 2025/10/13 15:24:15 by jleray           ###   ########.fr       */
+/*   Created: 2025/11/16 14:36:41 by jleray            #+#    #+#             */
+/*   Updated: 2025/11/16 14:36:41 by jleray           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_putptr(void *ptr)
 {
-	size_t	i;
+	size_t	temp;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	temp = (size_t)ptr;
+	ft_putstr_fd("0x", 1);
+	ft_putnbr_hex(temp, "0123456789abcdef");
+	return (count_car(temp, 10));
 }

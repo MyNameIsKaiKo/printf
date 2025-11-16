@@ -12,7 +12,7 @@
 
 #include "printf.h"
 
-void	ft_putunbr(unsigned int nb)
+void	ft_putunbr(size_t nb)
 {
 	if (nb < 10)
 	{
