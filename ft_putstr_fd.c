@@ -10,18 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-void	ft_putstr_fd(char *s, int fd)
+size_t	ft_putstr_fd(char *s, int fd)
 {
 	size_t	i;
 
 	i = 0;
 	if (!s)
-		return ;
+		return (0);
 	while (s[i])
 	{
 		write(fd, &s[i], 1);
 		i++;
 	}
+	return (ft_strlen(s));
 }

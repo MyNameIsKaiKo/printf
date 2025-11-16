@@ -10,14 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-int	ft_putptr(void *ptr)
+size_t	ft_putptr(void *ptr)
 {
 	size_t	temp;
+	size_t	res;
 
 	temp = (size_t)ptr;
 	ft_putstr_fd("0x", 1);
-	ft_putnbr_hex(temp, "0123456789abcdef");
-	return (count_car(temp, 10));
+	ft_putnbr_base(temp, "0123456789abcdef", NULL);
+	res = count_car(temp, 16) + 2;
+	return (res);
 }

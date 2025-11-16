@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_lhex.c                                   :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jleray <marvin@d42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 12:30:51 by jleray            #+#    #+#             */
-/*   Updated: 2025/11/14 12:30:51 by jleray           ###   ########.fr       */
+/*   Created: 2025/11/16 19:58:46 by jleray            #+#    #+#             */
+/*   Updated: 2025/11/16 19:58:46 by jleray           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-void	ft_putnbr_hex(size_t nb, char *base)
+void	ft_putnbr_base(size_t nb, char *base, size_t *i)
 {
 	if (nb < ft_strlen(base))
 	{
 		ft_putchar_fd(base[nb], 1);
+		if (i != NULL)
+			(*i) = (*i) + 1;
 		return ;
 	}
 	else
 	{
-		ft_putnbr_hex(nb / ft_strlen(base), base);
-		ft_putnbr_hex(nb % ft_strlen(base), base);
+		ft_putnbr_base(nb / ft_strlen(base), base, i);
+		ft_putnbr_base(nb % ft_strlen(base), base, i);
 	}
 }

@@ -4,21 +4,20 @@ CFLAGS =	-Werror -Wall -Wextra
 
 SOURCE =	ft_printf.c \
 			ft_putnbr_base.c \
-			ft_putpercent.c \
-			ft_putunbr.c \
 			ft_putnbr_fd.c \
 			ft_putchar_fd.c \
 			ft_putstr_fd.c \
 			ft_strlen.c \
+			ft_putptr.c \
+			count_car.c \
+
 
 
 NAME =	libftprintf.a
 
-INCLUDES =	printf.h
+INCLUDES =	ft_printf.h
 
 OBJS =	$(SOURCE:.c=.o)
-
-OBJSBONUS = $(SOURCEBONUS:.c=.o)
 
 all:	$(NAME)
 
@@ -27,9 +26,6 @@ $(NAME): $(OBJS)
 
 %.o: %.c
 	$(COMPILE) $(CFLAGS) -I $(INCLUDES) -c $< -o $@
-
-bonus: $(OBJS) $(OBJSBONUS)
-	ar rcs $(NAME) $(OBJS) $(OBJSBONUS)
 
 clean:
 	rm -f $(OBJS) $(OBJSBONUS)

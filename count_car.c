@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-int	count_car(size_t nb, int base)
+size_t	count_car(size_t nb, int base)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (nb > 0)
