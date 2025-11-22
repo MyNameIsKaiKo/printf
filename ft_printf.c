@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-size_t	print_tag(char *format, va_list args)
+static size_t	print_tag(char *format, va_list args)
 {
 	size_t	i;
 
@@ -20,9 +20,9 @@ size_t	print_tag(char *format, va_list args)
 	if (*format == 'c')
 		i = (size_t)ft_putchar_fd((char)va_arg(args, int), 1);
 	else if (*format == 's')
-		i = ft_putstr_fd((char *)va_arg(args, char *), 1);
+		i = ft_putstr_fd(va_arg(args, char *), 1);
 	else if (*format == 'p')
-		i = ft_putptr((void *)va_arg(args, void *));
+		i = ft_putptr(va_arg(args, void *));
 	else if (*format == 'd')
 		ft_putnbr_fd(va_arg(args, int), 1, &i);
 	else if (*format == 'i')
@@ -30,9 +30,9 @@ size_t	print_tag(char *format, va_list args)
 	else if (*format == 'u')
 		ft_putnbr_base(va_arg(args, unsigned int), "0123456789", &i);
 	else if (*format == 'x')
-		ft_putnbr_base(va_arg(args, int), "0123456789abcdef", &i);
+		ft_putnbr_hex(va_arg(args, int), "0123456789abcdef", &i);
 	else if (*format == 'X')
-		ft_putnbr_base(va_arg(args, int), "0123456789ABCDEF", &i);
+		ft_putnbr_hex(va_arg(args, int), "0123456789ABCDEF", &i);
 	else if (*format == '%')
 		i = ft_putchar_fd('%', 1);
 	return (i);

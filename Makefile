@@ -9,8 +9,7 @@ SOURCE =	ft_printf.c \
 			ft_putstr_fd.c \
 			ft_strlen.c \
 			ft_putptr.c \
-			count_car.c \
-
+			ft_putnbr_hex.c \
 
 
 NAME =	libftprintf.a

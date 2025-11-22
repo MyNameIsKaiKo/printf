@@ -14,12 +14,15 @@
 
 size_t	ft_putptr(void *ptr)
 {
-	size_t	temp;
-	size_t	res;
+	size_t	i;
 
-	temp = (size_t)ptr;
+	if (ptr == 0)
+	{
+		i = ft_putstr_fd("(nil)", 1);
+		return (i);
+	}
 	ft_putstr_fd("0x", 1);
-	ft_putnbr_base(temp, "0123456789abcdef", NULL);
-	res = count_car(temp, 16) + 2;
-	return (res);
+	i = 2;
+	ft_putnbr_base((size_t)ptr, "0123456789abcdef", &i);
+	return (i);
 }

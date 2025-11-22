@@ -15,20 +15,18 @@ void	ft_putnbr_fd(int n, int fd, size_t *i)
 {
 	if (n == -2147483648)
 	{
-		write(fd, "-2147483648", 11);
-		(*i) = (*i) + 11;
+		(*i) += ft_putstr_fd("-2147483648", 1);
 		return ;
 	}
 	else if (n < 0)
 	{
-		ft_putchar_fd('-', fd);
+		(*i) += ft_putchar_fd('-', fd);
 		n *= -1;
 		ft_putnbr_fd(n, fd, i);
 	}
 	else if (n >= 0 && n <= 9)
 	{
-		ft_putchar_fd(n + '0', fd);
-		(*i) = (*i) + 1;
+		(*i) += ft_putchar_fd(n + '0', fd);
 		return ;
 	}
 	else

@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jleray <marvin@d42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 19:49:25 by jleray            #+#    #+#             */
-/*   Updated: 2025/10/21 19:49:25 by jleray           ###   ########.fr       */
+/*   Created: 2025/11/16 19:58:46 by jleray            #+#    #+#             */
+/*   Updated: 2025/11/16 19:58:46 by jleray           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_putstr_fd(char *s, int fd)
+void	ft_putnbr_hex(unsigned int nb, char *base, size_t *i)
 {
-	size_t	i;
-
-	i = 0;
-	if (!s)
+	if (nb < 16)
 	{
-		i = ft_putstr_fd("(null)", 1);
-		return (i);
+		(*i) += ft_putchar_fd(base[nb], 1);
+		return ;
 	}
-	while (s[i])
+	else
 	{
-		write(fd, &s[i], 1);
-		i++;
+		ft_putnbr_base(nb / ft_strlen(base), base, i);
+		ft_putnbr_base(nb % ft_strlen(base), base, i);
 	}
-	return (ft_strlen(s));
 }

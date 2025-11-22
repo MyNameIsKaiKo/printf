@@ -16,9 +16,7 @@ void	ft_putnbr_base(size_t nb, char *base, size_t *i)
 {
 	if (nb < ft_strlen(base))
 	{
-		ft_putchar_fd(base[nb], 1);
-		if (i != NULL)
-			(*i) = (*i) + 1;
+		(*i) += ft_putchar_fd(base[nb], 1);
 		return ;
 	}
 	else
